@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caderno de Física: Espectroscopia e Leis de Kirchhoff</title>
+  
+  <!-- Fontes Manuscritas Escolares -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topo">
+    <span class="prog">Caderno de Ciências da Natureza • Aula Teórica</span>
+    <h1>Espectroscopia: Luz, Matéria e Identidade Atômica</h1>
+    <p class="sub">Do arco-íris às impressões digitais das estrelas • <strong>Prof. Física</strong></p>
+
+    <!-- Navegação em Abas (Estilo Marcador de Caderno) -->
+    <nav aria-label="Abas da Aula">
+      <ol>
+        <li><button class="tab-btn active" data-tab="tab-teoria">1. Teoria & Conceitos</button></li>
+        <li><button class="tab-btn" data-tab="tab-kirchhoff">2. Leis de Kirchhoff</button></li>
+        <li><button class="tab-btn" data-tab="tab-exercicios">3. Questões de Fixação</button></li>
+      </ol>
+    </nav>
+  </header>
+
+<!-- KaTeX CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+
+<!-- KaTeX JS Core -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+
+<!-- KaTeX Auto-render (necessário para ler textos com $ ou $$) -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderizarKaTeX()"></script>
+
+  <main>
+
+    <!-- ==================== ABA 1: TEORIA & CONCEITOS ==================== -->
+    <section id="tab-teoria" class="tab-conteudo active">
+
+      <!-- Bloco 1: Introdução Geral -->
+      <article class="card">
+        <div class="tape"></div>
+        <h2>1. Introdução: A Visão Geral</h2>
+        <p>
+          Como os astrônomos sabem de que é feita uma estrela a trilhões de quilômetros de distância se nunca estivemos lá? A resposta é uma só: <strong>analisando a luz que ela envia</strong>.
+        </p>
+        <p>
+          A matéria e a luz mantêm uma conversa contínua. Quando um átomo recebe ou perde energia, ele interage emitindo ou absorvendo comprimentos de onda específicos. A <strong>Espectroscopia</strong> é a ciência que estuda a luz decomposta em suas cores fundamentais para decifrar a composição da matéria.
+        </p>
+      </article>
+
+      <!-- Bloco 2: O que é Espectro -->
+      <article class="card">
+        <div class="tape t2"></div>
+        <h2>2. Espectro: O que é?</h2>
+        
+        <!-- Caixa para Copiar -->
+        <div class="caixa-copia">
+          <span class="selo-copia">✍️ Anotar no Caderno (Conceito Essencial)</span>
+          <p>
+            <strong>Espectro</strong> é a distribuição da intensidade da radiação eletromagnética (luz) em função de seu <strong>comprimento de onda ($\lambda$)</strong> ou de sua <strong>frequência ($f$)</strong>.
+          </p>
+          <p>
+            Em termos simples: é o resultado de pegar um feixe de luz aparentemente homogêneo (como a luz branca do Sol) e "abri-lo" através de um elemento dispersor (como um prisma ou uma rede de difração), revelando todas as cores que o compõem.
+          </p>
+        </div>
+
+        <!-- Barra visual ilustrativa -->
+        <div class="barra-espectro contínuo" title="Espectro Contínuo da Luz Visível"></div>
+        <p class="legenda-barra">Figura: Simulação do espectro contínuo visível (do vermelho ao violeta).</p>
+
+        <!-- Caixa de História (Não Copiar) -->
+        <div class="caixa-historia">
+          <span class="selo-historia">📖 Curiosidade Histórica (Apenas Leitura / Não Copiar)</span>
+          <p>
+            Em 1666, <strong>Isaac Newton</strong> realizou seu famoso <em>experimentum crucis</em>: no quarto escuro, fez um fino raio solar atravessar um prisma de vidro triangular. A parede recebeu um feixe alongado de cores. Foi Newton quem batizou essa fita colorida com a palavra latina <em>spectrum</em> (fantasma ou aparição). Ele provou que as cores já estavam dentro da luz branca, e não criadas pelo vidro.
+          </p>
+        </div>
+      </article>
+
+      <!-- Bloco 3: Espectro de Emissão -->
+      <article class="card">
+        <div class="tape"></div>
+        <h2>3. "... de Emissão": O que Significa?</h2>
+
+        <div class="caixa-copia">
+          <span class="selo-copia">✍️ Anotar no Caderno</span>
+          <p>
+            O termo <strong>Emissão</strong> refere-se ao ato de um corpo ou substância <em>produzir e liberar radiação própria</em> ao ser aquecido ou excitado eletricamente.
+          </p>
+          <p>Existem dois tipos fundamentais de Espectro de Emissão:</p>
+          <ul>
+            <li><strong>Emissão Contínua:</strong> Uma faixa colorida ininterrupta, contendo todas as cores sem cortes (produzida por sólidos, líquidos ou gases densos incandescentes, como o filamento de uma lâmpada ou o interior de uma estrela).</li>
+            <li><strong>Emissão de Linhas (Descontínua):</strong> Um fundo preto cortado por finas linhas coloridas e brilhantes (produzido por gases rarefeitos excitados).</li>
+          </ul>
+        </div>
+
+        <!-- Barra visual: Espectro de Emissão Discreto -->
+        <div class="barra-espectro linhas-emissao" title="Espectro de Linhas Brilhantes de Emissão">
+          <span class="linha-brilhante" style="left: 18%; background: #ff3b30;"></span>
+          <span class="linha-brilhante" style="left: 36%; background: #34c759;"></span>
+          <span class="linha-brilhante" style="left: 72%; background: #007aff;"></span>
+          <span class="linha-brilhante" style="left: 88%; background: #af52de;"></span>
+        </div>
+        <p class="legenda-barra">Figura: Espectro de emissão atômica (apenas linhas discretas sobre fundo escuro).</p>
+
+        <!-- Caixa de História (Não Copiar) -->
+        <div class="caixa-historia">
+          <span class="selo-historia">📖 Curiosidade Histórica (Apenas Leitura / Não Copiar)</span>
+          <p>
+            No início do século XIX, cientistas começaram a queimar sais em chamas (como o sal de cozinha, que dá uma chama amarela intensa) e olhá-los com prismas. Descobriram que cada elemento químico sempre emitia rigorosamente o mesmo conjunto de riscas coloridas. O elemento <strong>Césio</strong> (do latim <em>caesius</em>, azul-celeste) e o <strong>Rubídio</strong> (do latim <em>rubidus</em>, vermelho-escuro) foram descobertos apenas porque os químicos viram essas linhas novas em seus aparelhos antes de isolarem o metal!
+          </p>
+        </div>
+      </article>
+
+      <!-- Bloco 4: Espectro de Absorção -->
+      <article class="card">
+        <div class="tape t2"></div>
+        <h2>4. Espectro de Absorção</h2>
+
+        <div class="caixa-copia">
+          <span class="selo-copia">✍️ Anotar no Caderno</span>
+          <p>
+            Ocorre quando uma fonte que emite espectro contínuo (como o núcleo de uma lâmpada ou estrela) passa através de um <strong>gás frio e rarefeito</strong>.
+          </p>
+          <p>
+            Os átomos desse gás "engolem" seletivamente exatamente os mesmos comprimentos de onda que seriam capazes de emitir se estivessem quentes.
+          </p>
+          <p>
+            <strong>Resultado visual:</strong> Um arco-íris quase contínuo, porém "furado" por finas linhas pretas (linhas de absorção).
+          </p>
+        </div>
+
+        <!-- Barra visual: Espectro de Absorção -->
+        <div class="barra-espectro linhas-absorcao" title="Espectro Contínuo com Linhas Escuras de Absorção">
+          <span class="linha-escura" style="left: 18%;"></span>
+          <span class="linha-escura" style="left: 36%;"></span>
+          <span class="linha-escura" style="left: 72%;"></span>
+          <span class="linha-escura" style="left: 88%;"></span>
+        </div>
+        <p class="legenda-barra">Figura: Espectro de absorção (faixa contínua interceptada por linhas escuras nas mesmas posições).</p>
+
+        <!-- Caixa de História (Não Copiar) -->
+        <div class="caixa-historia">
+          <span class="selo-historia">📖 Curiosidade Histórica (Apenas Leitura / Não Copiar)</span>
+          <p>
+            Em 1814, o óptico alemão <strong>Joseph von Fraunhofer</strong> apontou seu teodolito com prisma para o Sol e mapeou mais de 570 linhas pretas na luz solar (as famosas "linhas de Fraunhofer"). Ele não sabia o que causava aquilo. Mais tarde, percebeu-se que a atmosfera mais externa e fria do Sol e da Terra roubava essas cores da luz gerada no núcleo solar!
+          </p>
+        </div>
+      </article>
+
+    </section>
+
+
+    <!-- ==================== ABA 2: AS LEIS DE KIRCHHOFF ==================== -->
+    <section id="tab-kirchhoff" class="tab-conteudo">
+
+      <article class="card">
+        <div class="tape"></div>
+        <h2>As 3 Leis de Kirchhoff para Espectroscopia (1859)</h2>
+        <p>
+          O físico Gustav Kirchhoff e o químico Robert Bunsen sintetizaram todo o comportamento espectral em <strong>três regras douradas</strong>. Este é o alicerce de toda a astrofísica e química analítica moderna:
+        </p>
+
+        <div class="triwrap">
+          
+          <!-- Lei 1 -->
+          <div class="postit">
+            <h3>1ª Lei: O Espectro Contínuo</h3>
+            <p>
+              <strong>Condição:</strong> Um corpo sólido, líquido ou gás de alta densidade incandescente e sob alta pressão.
+            </p>
+            <p>
+              <strong>Produz:</strong> Radiação em todas as cores contínuas, sem interrupção de linhas.
+            </p>
+            <p><em>Exemplo: filamento de tungstênio, carvão em brasa, centro do Sol.</em></p>
+          </div>
+
+          <!-- Lei 2 -->
+          <div class="postit azul">
+            <h3>2ª Lei: O Espectro de Emissão</h3>
+            <p>
+              <strong>Condição:</strong> Um gás quente, rarefeito (baixa pressão).
+            </p>
+            <p>
+              <strong>Produz:</strong> Espectro discreto formado apenas por linhas brilhantes sobre fundo escuro.
+            </p>
+            <p><em>Exemplo: letreiros de néon, nebulosas brilhantes no espaço.</em></p>
+          </div>
+
+        </div>
+
+        <div style="margin-top: 18px;">
+          <!-- Lei 3 -->
+          <div class="postit" style="background: #ffe3e3; transform: rotate(0deg);">
+            <h3>3ª Lei: O Espectro de Absorção</h3>
+            <p>
+              <strong>Condição:</strong> Luz de espectro contínuo atravessando um gás frio e de baixa densidade.
+            </p>
+            <p>
+              <strong>Produz:</strong> Espectro contínuo interrompido por linhas escuras exatamente nos mesmos comprimentos de onda em que esse gás emitiria luz se estivesse quente.
+            </p>
+            <p><em>Exemplo: a luz do Sol observada da Terra (as linhas de Fraunhofer revelam que o Sol é feito de Hidrogênio, Hélio, Ferro, etc.).</em></p>
+          </div>
+        </div>
+
+        <div class="caixa-copia" style="margin-top: 20px;">
+          <span class="selo-copia">💡 A Grande Moral da História (Mnemônica)</span>
+          <p style="margin: 0; font-size: 1.25rem;">
+            <strong>O átomo é recíproco:</strong> ele absorve <em>exatamente</em> a mesma cor que tem capacidade de emitir. A posição das linhas é como o <strong>RG ou impressão digital</strong> exclusiva de cada elemento da tabela periódica!
+          </p>
+        </div>
+      </article>
+
+    </section>
+
+
+    <!-- ==================== ABA 3: EXERCÍCIOS DE FIXAÇÃO ==================== -->
+    <section id="tab-exercicios" class="tab-conteudo">
+
+      <div class="kit-header">
+        <span class="tag-kit">Treino Prático</span>
+        <span class="pts">4 Questões Conceituais</span>
+      </div>
+
+      <!-- Questão 1 -->
+      <article class="questao-card" id="q1">
+        <div class="questao-header">
+          <span class="num">01</span>
+          <div>
+            <h3 style="margin:0;">Classificação dos Espectros</h3>
+            <span class="pts">Conceito fundamental</span>
+          </div>
+        </div>
+        <p class="enunciado">
+          Ao observar a luz de uma lâmpada comum de filamento de tungstênio através de um prisma, um estudante observa uma faixa contínua sem nenhuma linha escura. De acordo com a 1ª Lei de Kirchhoff, isso ocorre porque:
+        </p>
+
+        <ul class="alternativas-lista" data-correta="B">
+          <li class="alt-item" data-alt="A">A) O filamento é composto por um gás de baixíssima pressão.</li>
+          <li class="alt-item" data-alt="B">B) O filamento é um sólido incandescente emitindo radiação térmica contínua.</li>
+          <li class="alt-item" data-alt="C">C) A luz foi filtrada pelo bulbo de vidro que reteve os comprimentos de onda discretos.</li>
+          <li class="alt-item" data-alt="D">D) Os elétrons do tungstênio não realizam saltos quânticos de energia.</li>
+        </ul>
+
+        <div class="fases-box">
+          <div class="fase-item fase-1">
+            <h4 class="fase-titulo">Fase 1: Leitura do Fenômeno</h4>
+            <p class="fase-corpo">Identifique o estado da fonte: o tungstênio é um metal sólido aquecido a altas temperaturas (incandescente).</p>
+          </div>
+          <div class="fase-item fase-2">
+            <h4 class="fase-titulo">Fase 2: Aplicação da Teoria</h4>
+            <p class="fase-corpo">Pela 1ª Lei de Kirchhoff, sólidos, líquidos e gases altamente comprimidos quando aquecidos emitem em todas as frequências contínuas do visível.</p>
+          </div>
+          <div class="fase-item fase-3">
+            <h4 class="fase-titulo">Fase 3: Conclusão</h4>
+            <p class="fase-corpo">Alternativa correta: <strong>(B)</strong>. Sólido incandescente = espectro contínuo.</p>
+          </div>
+        </div>
+
+        <div class="acoes-fases">
+          <button class="btn-fase btn-passo" onclick="avancarFase('q1')">Avançar Resolução ⏩</button>
+          <button class="btn-fase btn-tudo" onclick="resolverTudo('q1')">Ver Resposta Completa 📝</button>
+          <button class="btn-fase btn-reiniciar" onclick="reiniciarFase('q1')">Resetar ↺</button>
+        </div>
+      </article>
+
+      <!-- Questão 2 -->
+      <article class="questao-card" id="q2">
+        <div class="questao-header">
+          <span class="num">02</span>
+          <div>
+            <h3 style="margin:0;">Linhas de Emissão e Identificação</h3>
+            <span class="pts">Gás rarefeito aquecido</span>
+          </div>
+        </div>
+        <p class="enunciado">
+          Em um laboratório, um tubo de vidro contendo gás hidrogênio em baixa pressão é submetido a uma alta descarga elétrica. A luz emitida é direcionada a um espectroscópio. O que é visto na tela?
+        </p>
+
+        <ul class="alternativas-lista" data-correta="C">
+          <li class="alt-item" data-alt="A">A) Uma faixa contínua idêntica ao arco-íris solar.</li>
+          <li class="alt-item" data-alt="B">B) Uma tela completamente escura, pois o hidrogênio não emite no visível.</li>
+          <li class="alt-item" data-alt="C">C) Um fundo preto cortado apenas por algumas linhas coloridas e bem definidas.</li>
+          <li class="alt-item" data-alt="D">D) Uma faixa colorida contínua cortada por linhas pretas de absorção.</li>
+        </ul>
+
+        <div class="fases-box">
+          <div class="fase-item fase-1">
+            <h4 class="fase-titulo">Fase 1: Condição Experimental</h4>
+            <p class="fase-corpo">Temos um gás a <strong>baixa pressão (rarefeito)</strong> e energizado eletricamente (excitado).</p>
+          </div>
+          <div class="fase-item fase-2">
+            <h4 class="fase-titulo">Fase 2: A 2ª Lei de Kirchhoff</h4>
+            <p class="fase-corpo">Gases rarefeitos quentes produzem um espectro de <strong>emissão em linhas discretas</strong>, correspondentes às transições eletrônicas específicas daquele átomo.</p>
+          </div>
+          <div class="fase-item fase-3">
+            <h4 class="fase-titulo">Fase 3: Conclusão</h4>
+            <p class="fase-corpo">Alternativa correta: <strong>(C)</strong>. Linhas discretas sobre fundo escuro.</p>
+          </div>
+        </div>
+
+        <div class="acoes-fases">
+          <button class="btn-fase btn-passo" onclick="avancarFase('q2')">Avançar Resolução ⏩</button>
+          <button class="btn-fase btn-tudo" onclick="resolverTudo('q2')">Ver Resposta Completa 📝</button>
+          <button class="btn-fase btn-reiniciar" onclick="reiniciarFase('q2')">Resetar ↺</button>
+        </div>
+      </article>
+
+      <!-- Questão 3 -->
+      <article class="questao-card" id="q3">
+        <div class="questao-header">
+          <span class="num">03</span>
+          <div>
+            <h3 style="margin:0;">Origem das Linhas de Absorção</h3>
+            <span class="pts">Luz estelar e Fraunhofer</span>
+          </div>
+        </div>
+        <p class="enunciado">
+          Ao analisar o espectro do Sol, percebemos milhares de linhas pretas finas sobre o fundo colorido contínuo. Como a 3ª Lei de Kirchhoff explica esse resultado?
+        </p>
+
+        <ul class="alternativas-lista" data-correta="A">
+          <li class="alt-item" data-alt="A">A) O núcleo denso e quente gera luz contínua, que atravessa as camadas externas gasosas mais frias da atmosfera solar, as quais absorvem frequências específicas.</li>
+          <li class="alt-item" data-alt="B">B) O espaço entre a Terra e o Sol é preenchido por poeira escura que bloqueia aleatoriamente a luz visível.</li>
+          <li class="alt-item" data-alt="C">C) O hidrogênio do Sol entrou em colapso e perdeu sua capacidade de emitir fótons brilhantes.</li>
+          <li class="alt-item" data-alt="D">D) Trata-se de uma ilusão de óptica provocada exclusivamente pelo prisma utilizado pelo observador.</li>
+        </ul>
+
+        <div class="fases-box">
+          <div class="fase-item fase-1">
+            <h4 class="fase-titulo">Fase 1: O Caminho da Radiação</h4>
+            <p class="fase-corpo">Luz contínua de alta energia gerada no interior estelar denso (1ª lei) atravessa a cromosfera e fotosfera mais frias (gás rarefeito).</p>
+          </div>
+          <div class="fase-item fase-2">
+            <h4 class="fase-titulo">Fase 2: Princípio de Absorção Seletiva</h4>
+            <p class="fase-corpo">Pela 3ª Lei, o gás frio absorve os comprimentos de onda equivalentes às suas transições atômicas, deixando "sombras" ou lacunas escuras.</p>
+          </div>
+          <div class="fase-item fase-3">
+            <h4 class="fase-titulo">Fase 3: Conclusão</h4>
+            <p class="fase-corpo">Alternativa correta: <strong>(A)</strong>. Configura perfeitamente o espectro de absorção estelar mapeado por Fraunhofer.</p>
+          </div>
+        </div>
+
+        <div class="acoes-fases">
+          <button class="btn-fase btn-passo" onclick="avancarFase('q3')">Avançar Resolução ⏩</button>
+          <button class="btn-fase btn-tudo" onclick="resolverTudo('q3')">Ver Resposta Completa 📝</button>
+          <button class="btn-fase btn-reiniciar" onclick="reiniciarFase('q3')">Resetar ↺</button>
+        </div>
+      </article>
+
+      <!-- Questão 4 -->
+      <article class="questao-card" id="q4">
+        <div class="questao-header">
+          <span class="num">04</span>
+          <div>
+            <h3 style="margin:0;">A "Impressão Digital" dos Elementos</h3>
+            <span class="pts">Relação Emissão x Absorção</span>
+          </div>
+        </div>
+        <p class="enunciado">
+          Se compararmos o espectro de emissão do vapor de sódio aquecido com o espectro de absorção de um vapor de sódio frio iluminado por uma fonte contínua, notamos que:
+        </p>
+
+        <ul class="alternativas-lista" data-correta="D">
+          <li class="alt-item" data-alt="A">A) As linhas de emissão situam-se no vermelho e as de absorção situam-se no azul.</li>
+          <li class="alt-item" data-alt="B">B) Não há nenhuma relação entre as posições de linhas de emissão e de absorção.</li>
+          <li class="alt-item" data-alt="C">C) O vapor frio absorve todas as cores uniformemente, sem linhas nítidas.</li>
+          <li class="alt-item" data-alt="D">D) As linhas escuras de absorção ocorrem com exatidão nos mesmos comprimentos de onda das linhas brilhantes de emissão.</li>
+        </ul>
+
+        <div class="fases-box">
+          <div class="fase-item fase-1">
+            <h4 class="fase-titulo">Fase 1: O Postulado Quântico</h4>
+            <p class="fase-corpo">Os níveis de energia eletrônicos do átomo de sódio são quantizados e fixos ($\Delta E = h \cdot f$).</p>
+          </div>
+          <div class="fase-item fase-2">
+            <h4 class="fase-titulo">Fase 2: Simetria Física</h4>
+            <p class="fase-corpo">A energia necessária para promover o elétron de nível (absorção) é idêntica à energia liberada quando ele retorna ao estado fundamental (emissão).</p>
+          </div>
+          <div class="fase-item fase-3">
+            <h4 class="fase-titulo">Fase 3: Conclusão</h4>
+            <p class="fase-corpo">Alternativa correta: <strong>(D)</strong>. As linhas coincidem com precisão geométrica nos mesmos comprimentos de onda.</p>
+          </div>
+        </div>
+
+        <div class="acoes-fases">
+          <button class="btn-fase btn-passo" onclick="avancarFase('q4')">Avançar Resolução ⏩</button>
+          <button class="btn-fase btn-tudo" onclick="resolverTudo('q4')">Ver Resposta Completa 📝</button>
+          <button class="btn-fase btn-reiniciar" onclick="reiniciarFase('q4')">Resetar ↺</button>
+        </div>
+      </article>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Caderno de Estudos • Feito com dedicação para aprender a essência da física ✨</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
